@@ -20,8 +20,8 @@ const Image * App::Descriptor::icon() {
   return ImageStore::RpnIcon;
 }
 
-int App::Descriptor::examinationLevel() {
-  return App::Descriptor::StrictExaminationLevel;
+App::Descriptor::ExaminationLevel App::Descriptor::examinationLevel() {
+  return App::Descriptor::ExaminationLevel::Strict;
 }
 
 App::Snapshot::Snapshot()
