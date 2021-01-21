@@ -1,6 +1,7 @@
 #ifndef RPN_APP_H
 #define RPN_APP_H
 
+#include "../shared/shared_app.h"
 #include <escher.h>
 #include "../shared/text_field_delegate_app.h"
 #include "rpn_content_view.h"
@@ -20,7 +21,7 @@ public:
     const Image * icon() override;
     App::Descriptor::ExaminationLevel examinationLevel() override;
   };
-  class Snapshot : public ::App::Snapshot {
+  class Snapshot : public ::SharedApp::Snapshot {
   public:
     Snapshot();
     App * unpack(Container * container) override;
@@ -28,7 +29,6 @@ public:
     Descriptor * descriptor() override;
     Stack * stack();
   private:
-    void tidy() override;
     Stack m_stack;
   };
 private:
